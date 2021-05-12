@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <h1>New campground</h1>
-    <form action="/campgrounds" method="POST">
+    <h1>Edit Campground</h1>
+    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
         <div>
             <label for="title">Name</label>
-            <input type="text" id="title" name="campground[title]">
+            <input type="text" id="title" name="campground[title]" value="<%= campground.title %> ">
         </div>
         <div>
             <label for="location">Location</label>
-            <input type="text" id="location" name="campground[location]">
+            <input type="text" id="location" name="campground[location]" value="<%= campground.location %> ">
         </div>
-        <button>Create new campground</button>
+        <button>Update campground</button>
         <a href="/campgrounds">cancel</a>
     </form>
 
